@@ -2,7 +2,7 @@
 # 1) create a files ( mycode.cpp , truecode.cpp , input.txt , output.txt , testcase.txt , gen.py , run.sh)
 # 2)
 function blank_file(){
-    if [ -d "cpp_setup" ] 
+    if [ -d cpp_setup ] 
     then
         rm -R cpp_setup
     fi
