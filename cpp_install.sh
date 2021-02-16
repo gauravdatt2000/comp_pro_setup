@@ -60,26 +60,48 @@ echo ' ">>gen.py '>>cpp.sh
 
 # template 3 rewrite chk some bug
 
-echo ' echo " '>>cpp.sh
+# echo ' echo " '>>cpp.sh
 
-echo ' 
+# echo ' 
+# for((i=1; ;i++));do
+#     python3 gen.py > testcase.txt
+#     ./mycode < testcase.txt > mycode.txt
+#     ./truecode < testcase.txt > truecode.txt
+#     if diff mycode.txt truecode.txt > /dev/null
+#     then
+#         echo "Testing testcase $i Testcase pass"
+#     else
+#         echo "Testing testcase $i Testcase fail"
+#         diff -w mycode.txt truecode.txt || break ;
+#         break;
+#     fi
+
+# done
+# '>>cpp.sh
+printf "
+printf '
 for((i=1; ;i++));do
     python3 gen.py > testcase.txt
     ./mycode < testcase.txt > mycode.txt
     ./truecode < testcase.txt > truecode.txt
     if diff mycode.txt truecode.txt > /dev/null
     then
-        echo "Testing testcase $i Testcase pass"
-    else
-        echo "Testing testcase $i Testcase fail"
-        diff -w mycode.txt truecode.txt || break ;
+'>>run.sh
+" >>cpp.sh
+printf 'printf "%s echo %%%cTesting testcase %%%c%%%c ' '\t' 'c' 's' 's' >>cpp.sh
+printf 'Testcase pass %%%c" %s"%s "%c" "%c" %c"%c >>run.sh' 'c' "'"  "'" '$' 'i' "'" "'" >>cpp.sh
+printf ' '>>cpp.sh
+printf '\nprintf "%selse" >>run.sh' "\n" >>cpp.sh
+printf '\nprintf "%s echo %%%cTesting testcase %%%c%%%c ' '\t' 'c' 's' 's' >>cpp.sh
+printf 'Testcase fail %%%c" %s"%s "%c" "%c" %c"%c >>run.sh' 'c' "'"  "'" '$' 'i' "'" "'" >>cpp.sh
+# printf ''>>cpp.sh
+printf '\nprintf " diff -w mycode.txt truecode.txt || break ;
         break;
     fi
 
-done
-'>>cpp.sh
+done">>run.sh'>>cpp.sh
 
-echo ' ">>run.sh '>>cpp.sh
+# echo ' ">>run.sh '>>cpp.sh
 
 
 
