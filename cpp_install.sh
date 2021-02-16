@@ -69,7 +69,7 @@ for((i=1; ;i++));do
     ./truecode < testcase.txt > truecode.txt
     if diff mycode.txt truecode.txt > /dev/null
     then
-        "Testing testcase $i Testcase pass"
+        echo "Testing testcase $i Testcase pass"
     else
         echo "Testing testcase $i Testcase fail"
         diff -w mycode.txt truecode.txt || break ;
