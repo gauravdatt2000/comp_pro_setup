@@ -30,15 +30,11 @@ int main(void)
 
 import sys
 import random
-
 #testcase
-
 test=1
 print(test)
-
 for i in range(test):
     print(random.randint(1,100))
-
 
  ">>gen.py 
 
@@ -56,7 +52,6 @@ printf "\t echo %cTesting testcase %s%s Testcase fail %c" '"' "$" "i" '"' >>run.
 printf " diff -w mycode.txt truecode.txt || break ;
         break;
     fi
-
 done">>run.sh
 }
 blank_file
