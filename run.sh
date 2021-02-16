@@ -7,4 +7,11 @@ for((i=1; ;i++));do
     if diff mycode.txt truecode.txt > /dev/null
     then
 '
-printf "\t echo %cTesting testcase %s%s Testcase pass %c" '"' "$" "i" '"'
+printf "\t echo %cTesting testcase %s%s Testcase pass %c" '"' "$" "i" '"' 
+printf "\nelse" 
+printf "\t echo %cTesting testcase %s%s Testcase fail %c" '"' "$" "i" '"'
+printf " diff -w mycode.txt truecode.txt || break ;
+        break;
+    fi
+
+done"

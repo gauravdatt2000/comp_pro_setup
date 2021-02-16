@@ -17,5 +17,13 @@ for((i=1; ;i++));do
 
 printf 'printf "%s echo %%%cTesting testcase %%%c%%%c ' '\t' 'c' 's' 's' >>run.sh
 printf 'Testcase pass %%%c" %s"%s "%c" "%c" %c"%c' 'c' "'"  "'" '$' 'i' "'" "'" >>run.sh
+printf ' '>>run.sh
+printf '\nprintf "%selse" ' "\n" >>run.sh
+printf '\nprintf "%s echo %%%cTesting testcase %%%c%%%c ' '\t' 'c' 's' 's' >>run.sh
+printf 'Testcase fail %%%c" %s"%s "%c" "%c" %c"%c' 'c' "'"  "'" '$' 'i' "'" "'" >>run.sh
+# printf ''>>run.sh
+printf '\nprintf " diff -w mycode.txt truecode.txt || break ;
+        break;
+    fi
 
-# echo '" ' >>run.sh
+done"'>>run.sh
