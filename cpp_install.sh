@@ -4,7 +4,7 @@
 # commands 
 # sudo su // get administrator login  
 # bash cpp_install.sh
-# cd ~bin
+cd ~bin
 echo "
 function blank_file(){
     if [ -d cpp_setup ] 
