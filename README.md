@@ -2,9 +2,7 @@
 
 ## Commands
 
-```python
-import foobar
-
+```
 sudo su 
 chmod +rwx cpp_install.sh 
 ./cpp_install.sh 
